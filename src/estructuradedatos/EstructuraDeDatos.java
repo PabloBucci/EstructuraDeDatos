@@ -6,10 +6,10 @@
 package estructuradedatos;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Stream;
-
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 /**
  *
  * @author educacionit
@@ -20,10 +20,10 @@ public class EstructuraDeDatos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
+      /*try {
             // TODO code application logic here
             Pila <String> p = new Pila<>(5);
-            List <String> l = new List<>();  
+            //List <String> l = new List<>();  
             p.empujar("a");
             p.empujar("75");
             p.empujar("b");
@@ -39,9 +39,33 @@ public class EstructuraDeDatos {
             System.out.println("");
             p.listar();
         }catch(PilaLlenaException e) {
-            System.out.println("Excepcion de pila llena");
+            e.printStackTrace();
         }catch(PilaVaciaException e) {
-            System.out.println("Excepcion de pila vacia");
+         //   System.out.println("Excepcion de pila vacia");
         }  
+        List<String> nombres = new LinkedList<>();
+        nombres.add("Juan");
+        nombres.add("Pedro");
+        nombres.add("Juan");
+        System.out.println(nombres.size());
+        for(String e: nombres){
+            System.out.println(e);
+        }
+        System.out.println("");
+        nombres.remove(0);
+        System.out.println(nombres.get(0));
+        System.out.println("");
+        for(String e: nombres){
+            System.out.println(e); 
+        }
+        */
+        Set<Persona> personas = new HashSet<>();
+        personas.add(new Persona("Juan","10"));
+        personas.add(new Persona("Juan","10"));
+        personas.add(new Persona("Pedro","11"));
+        System.out.println(personas.size());
+        for(Persona p: personas){
+            System.out.println(p);
+        }
     }
 }
