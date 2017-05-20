@@ -5,8 +5,10 @@
  */
 package estructuradedatos;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 /**
  *
@@ -21,16 +23,25 @@ public class EstructuraDeDatos {
         try {
             // TODO code application logic here
             Pila <String> p = new Pila<>(5);
+            List <String> l = new List<>();  
             p.empujar("a");
             p.empujar("75");
             p.empujar("b");
+            System.out.println(p.sacar());
             p.empujar("1500");
             p.empujar("f");
             p.empujar("f");
             System.out.println(p.sacar());
+            System.out.println(p.sacar());
+            System.out.println(p.sacar());
+            System.out.println(p.sacar());
+            System.out.println(p.sacar());
             System.out.println("");
             p.listar();
         }catch(PilaLlenaException e) {
+            System.out.println("Excepcion de pila llena");
+        }catch(PilaVaciaException e) {
+            System.out.println("Excepcion de pila vacia");
         }  
     }
 }

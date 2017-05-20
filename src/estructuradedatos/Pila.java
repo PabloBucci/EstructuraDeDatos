@@ -31,10 +31,10 @@ public class Pila <T>{
         }
     }
     
-    public T sacar (){
+    public T sacar () throws PilaVaciaException{
         T e = null;
         if(this.estaVacia()){
-            System.out.println("ERROR, Pila vacia");
+            throw new PilaVaciaException ("Pila vacía");
         }else{
             e = elementos[tope];
             elementos[tope--] = null;

@@ -7,11 +7,8 @@ package estructuradedatos;
 
 /**
  *
- * @author educacionit
+ * @author Pablo
  */
-public class PilaVaciaException extends Exception{
-
-    public PilaVaciaException(String msg){
-        super(msg);
-    } 
+public class ArraList {
+    
 }
