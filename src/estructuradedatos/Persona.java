@@ -11,25 +11,29 @@ import java.util.Objects;
  *
  * @author educacionit
  */
-public class Persona {
-    private String dni;
+public class Persona implements Comparable <Persona>{
+    private Integer dni;
     private String nombre;
 
     public Persona(String nombre, String dni) {
-        this.dni = dni;
+        this.dni = Integer.parseInt(dni);
         this.nombre = nombre;
     }
 
     public void setDni(String dni) {
-        this.dni = dni;
+        this.dni = Integer.parseInt(dni);
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getDni() {
-        return dni;
+    /**
+     *
+     * @return
+     */
+    public Integer getDni() {
+        return this.dni;
     }
 
     public String getNombre() {
@@ -66,5 +70,7 @@ public class Persona {
         return true;
     }
     
-    
+    public int compareTo (Persona otraPersona){
+        return this.dni.compareTo(otraPersona.dni);
+    }
 }

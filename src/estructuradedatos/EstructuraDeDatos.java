@@ -7,9 +7,13 @@ package estructuradedatos;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 /**
  *
  * @author educacionit
@@ -58,14 +62,32 @@ public class EstructuraDeDatos {
         for(String e: nombres){
             System.out.println(e); 
         }
-        */
+        
         Set<Persona> personas = new HashSet<>();
+        SortedSet<Persona> personas = new TreeSet<Persona>();
         personas.add(new Persona("Juan","10"));
-        personas.add(new Persona("Juan","10"));
+        personas.add(new Persona("Alvaro","15"));
         personas.add(new Persona("Pedro","11"));
         System.out.println(personas.size());
         for(Persona p: personas){
             System.out.println(p);
+        }
+        */
+        Map<String,Persona> personasPorDNI =new HashMap();
+        personasPorDNI.put("10", new Persona("Juan","10"));
+        Persona p2 =new Persona("Pedro", "20");
+        personasPorDNI.put("20", p2);
+        
+        for(Persona p: personasPorDNI.values()){
+            System.out.println(p);
+        }
+        
+        for(String k: personasPorDNI.keySet()){
+            System.out.println(k + " : " + personasPorDNI.get(k));
+        }
+        
+        for(Map.Entry<String,Persona> e: personasPorDNI.entrySet()){
+            System.out.println(e.getKey() + ": " + e.getValue());
         }
     }
 }
